@@ -20,4 +20,4 @@ class Obsidian {
 }
 
 // @ts-expect-error
-window.Obsidian = Obsidian;
+module.exports = Obsidian

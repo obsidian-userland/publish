@@ -24,7 +24,7 @@ function NotePage(props: {
   const history = useHistory()
 
   async function fetchNote(noteId: string) {
-    const md = await fetch(`${props.config.base}/${noteId}.md`).then(res => res.text())
+    const md = await fetch(`${props.config.base}${noteId}.md`).then(res => res.text())
     return {
       content: md,
       pageId: noteId
@@ -93,7 +93,7 @@ function NotePage(props: {
             }
 
             return (
-              <Box overflow="scroll" width="xl" borderRight="1px" borderColor="gray.100" p={8} >
+              <Box key={note.pageId} overflow="scroll" width="xl" borderRight="1px" borderColor="gray.100" p={8} >
                 <ReactMarkdown
                   plugins={[
                     [wikiLinkPlugin, {

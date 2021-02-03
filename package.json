@@ -1,7 +1,9 @@
 {
   "name": "@obsidian-userland/publish",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "parcel index.html"
+    "dev": "parcel index.html -d example --global Obsidian",
+    "build": "parcel build src/index.ts -d dist --no-map --global Obsidian"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.2.1",
