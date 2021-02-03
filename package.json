@@ -1,6 +1,9 @@
 {
   "name": "@obsidian-userland/publish",
   "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "parcel index.html -d example --global Obsidian",
     "build": "npm run clean && parcel build src/index.ts -d dist --no-source-maps --global Obsidian",
