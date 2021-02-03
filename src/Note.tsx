@@ -32,10 +32,15 @@ function NotePage(props: {
   }
 
   React.useEffect(() => {
-    history.push({
-      pathname: location.pathname,
-      search: `?${noteStack.map(note => note.pageId).map(id => `id=${id}`).join('&')}`
-    })
+    if (noteStack.length === 1 && noteStack[0].pageId === props.config.mainPage) {
+
+    } else {
+      history.push({
+        pathname: location.pathname,
+        search: `?${noteStack.map(note => note.pageId).map(id => `id=${id}`).join('&')}`
+      })
+
+    }
   }, [noteStack])
 
   async function init() {
