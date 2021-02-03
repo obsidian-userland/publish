@@ -1,0 +1,27 @@
+Go to your vault, create a file `index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@obsidian-userland/publish</title>
+  <script src="https://cdn.jsdelivr.net/npm/@obsidian-userland/publish@1.0.1/dist/index.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    const app = new Obsidian({
+      title: `your title`,
+      target: document.querySelector('#root')
+    })
+  </script>
+</body>
+
+</html>
+```
+
