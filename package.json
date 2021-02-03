@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "parcel index.html -d example --global Obsidian",
-    "build": "parcel build src/index.ts -d dist --no-map --global Obsidian"
+    "build": "npm run clean && parcel build src/index.ts -d dist --no-source-maps --global Obsidian",
+    "clean": "rm -rf dist",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.2.1",
