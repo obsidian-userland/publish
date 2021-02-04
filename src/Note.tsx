@@ -7,6 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { ObsidianConfig } from ".";
 import ps from 'promise.series'
 import { wikiLinkPlugin } from 'remark-wiki-link';
+import gfm from 'remark-gfm'
 
 export type Note = {
   pageId: string;
@@ -101,6 +102,7 @@ function NotePage(props: {
               <Box key={note.pageId} overflow="scroll" width="xl" borderRight="1px" borderColor="gray.100" p={8} >
                 <ReactMarkdown
                   plugins={[
+                    gfm,
                     [wikiLinkPlugin, {
                       aliasDivider: '|'
                     }]
@@ -118,7 +120,7 @@ function NotePage(props: {
                     heading: (property) => {
                       const size = ['', 'xl', 'lg', 'md', 'sm', 'sm', 'sm', 'sm', 'sm']
                       return (
-                        <Heading my={2} size={size[property.level]} as={`h${property.level}` as any}>{property.children}</Heading>
+                        <Heading my={4} size={size[property.level]} as={`h${property.level}` as any}>{property.children}</Heading>
                       )
                     },
                     code: (property) => {
