@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { useState } from "react";
 import qs from 'query-string'
-import { Box, Flex, Link, ListItem, UnorderedList, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, ListItem, UnorderedList, Text, Heading, Code } from "@chakra-ui/react";
 import React from "react";
 import { useLocation, useHistory } from 'react-router-dom'
 import { ObsidianConfig } from ".";
@@ -115,13 +115,29 @@ function NotePage(props: {
                         </UnorderedList>
                       )
                     },
+                    heading: (property) => {
+                      const size = ['', 'xl', 'lg', 'md', 'sm', 'sm', 'sm', 'sm', 'sm']
+                      return (
+                        <Heading my={2} size={size[property.level]} as={`h${property.level}` as any}>{property.children}</Heading>
+                      )
+                    },
+                    code: (property) => {
+                      return <Code fontSize="xs" p={4} width="100%" whiteSpace="pre-wrap" my={2}>
+                        {property.value}
+                      </Code>
+                    },
+                    inlineCode: (property) => {
+                      return (
+                        <Code>{property.value}</Code>
+                      )
+                    },
                     listItem: ({ children }) => {
                       return (
                         <ListItem>{children}</ListItem>
                       )
                     },
                     paragraph: ({ children }) => {
-                      return <Text>{children}</Text>
+                      return <Text my={2}>{children}</Text>
                     },
                     wikiLink: ({ value, data: { permalink, alias, hProperties: { className, href } } }) => {
                       return (

@@ -4,4 +4,11 @@ Obsidian is good for taking note / writing documentation but not good enough for
 
 > This project is under development. So there are some [[limitaions]].
 
-Follow [[Quick start]] to get start.
+#### Guide
+
+- [[Quick start]]
+- [[API Reference]]
+
+#### Links
+
+- GitHub: https://github.com/obsidian-userland/publish
