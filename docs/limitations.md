@@ -1,6 +1,6 @@
-# Limtations
+# Limitations
 
-This project is in early development. There are some known limitaion but they would be resolved later. Since this is a open-source project, pull request is very welcome.
+This project is in early development. There are some known limitations but they would be resolved later. Since this is a open-source project, pull request is very welcome.
 
 ### notes in folder is not supported
 
