@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,3 +20,29 @@
     </script>
   </body>
 </html>
+=======
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Root Index</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@obsidian-userland/publish/dist/index.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    const app = new Obsidian({
+      base: '/notes/',
+      // base: '/docs/',
+      mainPage: "Homepage",
+      title: "Site Title",
+      target: document.querySelector('#root')
+    })
+  </script>
+</body>
+
+</html>
+>>>>>>> Stashed changes
